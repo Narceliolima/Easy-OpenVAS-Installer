@@ -12,7 +12,7 @@
 
 ## CUSTOM CONFIG SETTINGS ##
 DEFAULT_ADMIN_USER="admin"                    # Set the GVM default admin account username
-DEFAULT_ADMIN_PASS="password"                 # Set the GVM default admin account password
+DEFAULT_ADMIN_PASS="123"                 # Set the GVM default admin account password
 SERVER_NAME=""                        # Preferred server hostname (installer will prompt if left blank)
 LOCAL_DOMAIN=""                       # Local DNS suffix (defaults to hostname.dns-suffix if left blank)
 CERT_DOMAIN=""                        # TLS certificate dns domain (defaults to hostname.dns-suffix if left blank)
@@ -326,21 +326,7 @@ echo -e "${LPURPLEB} GVM web console admin account name [Enter to use: ${DEFAULT
 # Prompt for managment console admin acount username
   read -r -p "              Enter admin account name: " admin_user
   ADMIN_USER=${admin_user:-$DEFAULT_ADMIN_USER}
-
-# Secure prompt for password with confirmation
-  while true; do
-     read -r -s -p "              Enter admin user password: " password
-     echo
-     read -r -s -p "              Confirm admin user password: " password_confirm
-     echo
-      if [ "${password}" == "${password_confirm}" ]; then
-         ADMIN_PASS=${password:-$DEFAULT_ADMIN_PASS}
-         break
-     else
-         echo "              Passwords do not match. Please try again."
-         echo
-     fi
-done
+  ADMIN_PASS=${password:-$DEFAULT_ADMIN_PASS}
 
 echo
 echo -e "${LGREEN}###############################################################################"
