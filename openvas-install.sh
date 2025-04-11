@@ -250,7 +250,7 @@ echo
 # Ensure SERVER_NAME is consistent with local host entries
 if [[ -z ${SERVER_NAME} ]]; then
     echo -e "${LPURPLEB} Update Linux system HOSTNAME? [Enter to keep: ${HOSTNAME}]${GREYB}"
-    read -p "              Enter Linux hostname : " SERVER_NAME
+    #read -p "              Enter Linux hostname : " SERVER_NAME
     # If hit enter making no SERVER_NAME change, assume the existing hostname as current
     if [[ "${SERVER_NAME}" = "" ]]; then
         SERVER_NAME=$HOSTNAME
@@ -277,7 +277,7 @@ fi
 # Ensure LOCAL_DOMAIN suffix & localhost entries are consistent
 if [[ -z ${LOCAL_DOMAIN} ]]; then
     echo -e "${LPURPLEB} Update Linux LOCAL DNS SUFFIX [Enter to keep: ${SERVER_NAME}.${DOMAIN_SUFFIX}]${GREYB}"
-    read -p "              Complete this local domain suffix: $SERVER_NAME." LOCAL_DOMAIN
+    #read -p "              Complete this local domain suffix: $SERVER_NAME." LOCAL_DOMAIN
     # If hit enter making no LOCAL_DOMAIN name change, assume the existing domain suffix as current
     if [[ "${LOCAL_DOMAIN}" = "" ]]; then
         LOCAL_DOMAIN=$DOMAIN_SUFFIX
@@ -324,7 +324,7 @@ fi
 
 echo -e "${LPURPLEB} GVM web console admin account name [Enter to use: ${DEFAULT_ADMIN_USER}]${GREYB}"
 # Prompt for managment console admin acount username
-  read -r -p "              Enter admin account name: " admin_user
+  #read -r -p "              Enter admin account name: " admin_user
   ADMIN_USER=${admin_user:-$DEFAULT_ADMIN_USER}
   ADMIN_PASS=${password:-$DEFAULT_ADMIN_PASS}
 
