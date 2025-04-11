@@ -399,8 +399,6 @@ spin
 echo
 echo -e "Common dependencies installed successfully..."
 
-ping 127.0.0.1 -c 180
-
 echo
 echo -e "${LGREEN}###############################################################################"
 echo -e " Checking latest OpenVAS GitHub releases - edit script to force a version"
